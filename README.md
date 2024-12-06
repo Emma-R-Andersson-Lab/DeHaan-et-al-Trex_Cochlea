@@ -1,5 +1,5 @@
 # De Haan et al, Otic placode and neural crest barcoding reveals cochlear compartmentalization 
-Please reach out to sandra.de.haan@ki.se for any questions or support for codes provided in this repository. 
+
 Pre-analysis library characterisation of barcodes can be found at https://github.com/Emma-R-Andersson-Lab/barcode_library_analysis 
 General information on the Trex algorithm can be found at https://github.com/frisen-lab/TREX
 
