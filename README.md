@@ -15,3 +15,25 @@ This repository contains instructions to
 Overview of required files and flow of CloneID extraction and addition to Seurat object. CloneIDs are added back to Seurat object as described in notebook #3
   
 ![Flow CloneID extraction_git](https://github.com/user-attachments/assets/330d53ce-868d-4dbb-9e72-bf41b6681594)
+
+## Jaccard Threshold Parameter Sweep
+
+You can look into the [#6 Jaccard Threshold Sweep](#6 Jaccard Threshold Sweep.ipynb) notebook to see how we chose the threshold or you can follow the instructions below to run it.
+
+To run it, you will need to download and install conda (preferably from [MINIFORGE](https://github.com/conda-forge/miniforge#download)). 
+Then clone this repository and install it.
+
+```
+git clone git@github.com:Emma-R-Andersson-Lab/DeHaan-et-al-Trex_Cochlea.git
+cd DeHaan-et-al-Trex_Cochlea
+conda env create -f environment.yml
+```
+
+Once it is installed, activate it and install TREX as we will need its helper functions.
+Finally run jupyter lab to open the notebook and run the cells.
+
+```
+conda activate trex_cochlea
+pip install git+https://github.com/frisen-lab/TREX.git --no-deps
+jupyter lab
+```

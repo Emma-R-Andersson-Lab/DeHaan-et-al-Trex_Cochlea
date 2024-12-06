@@ -1,0 +1,12 @@
+name: trex_cochlea
+channels:
+  - conda-forge
+dependencies:
+  - pip
+  - python
+  - jupyterlab
+  - pandas
+  - matplotlib
+  - seaborn
+  - pip:
+    - -r requirements.txt
