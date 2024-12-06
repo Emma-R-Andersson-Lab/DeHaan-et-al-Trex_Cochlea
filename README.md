@@ -1,5 +1,5 @@
 # De Haan et al, Otic placode and neural crest barcoding reveals cochlear compartmentalization 
-Any questions or support related to codes provided in this repositry please reach out to sandra.de.haan@ki.se 
+Any questions or support related to codes provided in this repository please reach out to sandra.de.haan@ki.se 
 
 This repository contains instructions to 
 - extract CellIDs from individual Seurat objects needed for CloneID extraction using the Trex algorithm (notebook #1)
