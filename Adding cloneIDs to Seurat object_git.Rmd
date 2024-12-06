@@ -1,0 +1,222 @@
+---
+title: "Adding cloneIDs to Trex_mt10dims40"
+output: html_document
+author: Sandra de Haan
+date: '2023-05-22'
+---
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(Seurat)
+library(dplyr)
+library(ggplot2)
+library(patchwork)
+```
+
+
+
+```{bash}
+ls
+```
+
+```{bash}
+head -n 5 clones.txt
+```
+
+```{bash}
+sed 's/$/-1/' clones.txt | head -n 5
+```
+
+```{bash}
+sed 's/$/-1/' clones.txt > clones_corr.txt
+
+head -n 5 clones_corr.txt
+```
+```{bash}
+sed 's/$/_1/' clones_corr.txt | head -n 5
+```
+
+```{bash}
+sed 's/$/_1/' clones_corr.txt > clones_corr_1.txt
+
+head -n 5 clones_corr_1.txt
+```
+
+
+---
+
+```{bash}
+head -n 5 T2_1_clones_renumbered.txt
+```
+
+```{bash}
+sed 's/$/-1/' T2_1_clones_renumbered.txt | head -n 5
+```
+
+```{bash}
+sed 's/$/-1/' T2_1_clones_renumbered.txt > T2_1_clones_renumbered_corr.txt
+
+head -n 5 T2_1_clones_renumbered_corr.txt
+```
+```{bash}
+sed 's/$/_2/' T2_1_clones_renumbered_corr.txt | head -n 5
+```
+
+```{bash}
+sed 's/$/_2/' T2_1_clones_renumbered_corr.txt > T2_1_clones_renumbered_corr_2.txt
+
+head -n 5 T2_1_clones_renumbered_corr_2.txt
+```
+
+
+
+---
+
+
+```{bash}
+head -n 5 T2_2_clones_renumbered.txt
+```
+
+```{bash}
+sed 's/$/-1/' T2_2_clones_renumbered.txt | head -n 5
+```
+
+```{bash}
+sed 's/$/-1/' T2_2_clones_renumbered.txt > T2_2_clones_renumbered_corr.txt
+
+head -n 5 T2_2_clones_renumbered_corr.txt
+```
+```{bash}
+sed 's/$/_3/' T2_2_clones_renumbered_corr.txt | head -n 5
+```
+
+```{bash}
+sed 's/$/_3/' T2_2_clones_renumbered_corr.txt > T2_2_clones_renumbered_corr_3.txt
+
+head -n 5 T2_2_clones_renumbered_corr_3.txt
+```
+
+
+---
+
+
+```{bash}
+head -n 5 T2_3_clones_renumbered.txt
+```
+
+```{bash}
+sed 's/$/-1/' T2_3_clones_renumbered.txt | head -n 5
+```
+
+```{bash}
+sed 's/$/-1/' T2_3_clones_renumbered.txt > T2_3_clones_renumbered_corr.txt
+
+head -n 5 T2_3_clones_renumbered_corr.txt
+```
+```{bash}
+sed 's/$/_4/' T2_3_clones_renumbered_corr.txt | head -n 5
+```
+
+```{bash}
+sed 's/$/_4/' T2_3_clones_renumbered_corr.txt > T2_3_clones_renumbered_corr_4.txt
+
+head -n 5 T2_3_clones_renumbered_corr_4.txt
+```
+
+
+-- 
+
+
+```{bash}
+head -n 5 T2_4_clones_renumbered.txt
+```
+
+```{bash}
+sed 's/$/-1/' T2_4_clones_renumbered.txt | head -n 5
+```
+
+```{bash}
+sed 's/$/-1/' T2_4_clones_renumbered.txt > T2_4_clones_renumbered_corr.txt
+
+head -n 5 T2_4_clones_renumbered_corr.txt
+```
+```{bash}
+sed 's/$/_5/' T2_4_clones_renumbered_corr.txt | head -n 5
+```
+
+```{bash}
+sed 's/$/_5/' T2_4_clones_renumbered_corr.txt > T2_4_clones_renumbered_corr_5.txt
+
+head -n 5 T2_4_clones_renumbered_corr_5.txt
+```
+
+-- 
+
+These 5 separate files are copied and paste into 1 notepad file named: allclones_percell01
+
+Adding this info to the existing object 
+
+
+```{r}
+Trex_mt10dim40 <- readRDS("Trex_mt10dim40.RDS")
+```
+
+```{r}
+allclones_percell <- read.csv("allclones_percell01.txt")
+```
+
+```{r}
+# rename the columns
+colnames(allclones_percell) <- c("cloneID", "cellID")
+
+# check the file
+head(allclones_percell, 5)
+```
+
+
+```{r}
+df <- data.frame(cellID = rownames(Trex_mt10dim40@meta.data), cloneID= 0)
+```
+
+
+```{r}
+# use left_join from dplyr package to match cellIDs and create new column with cloneID
+
+matched.df <- dplyr::left_join(df, allclones_percell, by = "cellID")
+
+head(matched.df, 5)
+```
+
+```{r}
+# replace NA values with zeros
+
+library(dplyr)
+
+matched.df <- matched.df %>% replace(., is.na(.), "0")
+length(which(matched.df$cloneID_percell.y > 0))
+
+head(matched.df, 5)
+```
+
+```{r}
+# adjust for adding to metadata
+
+rownames(matched.df) <- matched.df$cellID
+matched.df <- matched.df[, -2]
+colnames(matched.df) <- c("cellID", "cloneID")
+
+# add metadata
+Trex_mt10dim40<- AddMetaData(Trex_mt10dim40, matched.df)
+tail(Trex_mt10dim40@meta.data)
+```
+
+```{r}
+saveRDS(Trex_mt10dim40, file = "Trex_mt10dim40_clone.RDS")
+```
+
