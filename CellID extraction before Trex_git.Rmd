@@ -1,0 +1,170 @@
+---
+title: "CellID extraction Trex1 and Trex"
+output: html_document
+date: '2023-02-21'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, include = TRUE, results = "hide")
+```
+
+```{r}
+library(Seurat)
+library(dplyr)
+library(ggplot2)
+library(patchwork)
+library(sctransform)
+library(DoubletFinder)
+```
+
+
+```{r}
+setwd("C:/Users/sandeh/OneDrive - Karolinska Institutet/Dokument/Generalprojectdocuments/Trex_data_analysis/Re_filtering to 10 percent mt")
+```
+
+```{r}
+T1_P25552_1001_SCT_10 <- readRDS("T1_P25552_1001_SCT_10.RDS")
+```
+
+
+```{r}
+ids <- rownames(T1_P25552_1001_SCT_10@meta.data)
+head(ids)
+```
+
+
+```{r}
+write.csv(ids, file = "cellids_T1_P25552_1001_SCT_10.csv")
+```
+
+
+```{bash}
+sed 's/-1//' cellids_T1_P25552_1001_SCT_10.csv | head -n 5
+```
+
+
+```{bash}
+
+sed 's/-1//' cellids_T1_P25552_1001_SCT_10.csv > cellids_T1_P25552_1001_SCT_10_trex.csv
+
+head -n 5 cellids_T1_P25552_1001_SCT_10_trex.csv
+```
+
+Next dataset
+```{r}
+T2_P28155_1001_SCT_10 <- readRDS("T2_P28155_1001_SCT_10.RDS")
+```
+
+
+```{r}
+ids <- rownames(T2_P28155_1001_SCT_10@meta.data)
+head(ids)
+```
+
+
+```{r}
+write.csv(ids, file = "cellids_T2_P28155_1001_SCT_10.csv")
+```
+
+
+```{bash}
+sed 's/-1//' cellids_T2_P28155_1001_SCT_10.csv | head -n 5
+```
+
+```{bash}
+
+sed 's/-1//' cellids_T2_P28155_1001_SCT_10.csv > cellids_T2_P28155_1001_SCT_10_trex.csv
+
+head -n 5 cellids_T2_P28155_1001_SCT_10_trex.csv
+```
+
+
+Next dataset
+
+```{r}
+T2_P28155_1002_SCT_10 <- readRDS("T2_P28155_1002_SCT_10.RDS")
+```
+
+
+```{r}
+ids <- rownames(T2_P28155_1002_SCT_10@meta.data)
+head(ids)
+```
+
+
+
+```{r}
+write.csv(ids, file = "cellids_T2_P28155_1002_SCT_10.csv")
+```
+
+
+```{bash}
+sed 's/-1//' cellids_T2_P28155_1002_SCT_10.csv | head -n 5
+```
+
+```{bash}
+
+sed 's/-1//' cellids_T2_P28155_1002_SCT_10.csv > cellids_T2_P28155_1002_SCT_10_trex.csv
+
+head -n 5 cellids_T2_P28155_1002_SCT_10_trex.csv
+```
+
+Next dataset
+```{r}
+T2_P28155_1003_SCT_10 <- readRDS("T2_P28155_1003_SCT_10.RDS")
+```
+
+
+```{r}
+ids <- rownames(T2_P28155_1003_SCT_10@meta.data)
+head(ids)
+```
+
+
+```{r}
+write.csv(ids, file = "cellids_T2_P28155_1003_SCT_10.csv")
+```
+
+
+```{bash}
+sed 's/-1//' cellids_T2_P28155_1003_SCT_10.csv | head -n 5
+```
+
+```{bash}
+
+sed 's/-1//' cellids_T2_P28155_1003_SCT_10.csv > cellids_T2_P28155_1003_SCT_10_trex.csv
+
+head -n 5 cellids_T2_P28155_1003_SCT_10_trex.csv
+```
+
+
+Next dataset
+
+```{r}
+T2_P28155_1004_SCT_10 <- readRDS("T2_P28155_1004_SCT_10.RDS")
+```
+
+
+```{r}
+ids <- rownames(T2_P28155_1004_SCT_10@meta.data)
+head(ids)
+```
+
+
+```{r}
+write.csv(ids, file = "cellids_T2_P28155_1004_SCT_10.csv")
+```
+
+
+```{bash}
+sed 's/-1//' cellids_T2_P28155_1004_SCT_10.csv | head -n 5
+```
+
+```{bash}
+
+sed 's/-1//' cellids_T2_P28155_1004_SCT_10.csv > cellids_T2_P28155_1004_SCT_10_trex.csv
+
+head -n 5 cellids_T2_P28155_1004_SCT_10_trex.csv
+```
+
+--- end -- 
