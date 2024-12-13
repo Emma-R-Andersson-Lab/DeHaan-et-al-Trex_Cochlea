@@ -32,8 +32,24 @@ conda env create -f environment.yml
 Once it is installed, activate it and install TREX as we will need its helper functions.
 Finally run jupyter lab to open the notebook and run the cells.
 
+*Note: the `--no-deps` parameter is only needed in Windows.*
+
 ```
 conda activate trex_cochlea
 pip install git+https://github.com/frisen-lab/TREX.git --no-deps
 jupyter lab
 ```
+
+## Cite
+
+```
+Author list (2024). Title. Zenodo. https://doi.org/... .
+```
+
+## License
+
+[GNU GPL 3.0](LICENSE)
+
+## Contact
+
+Open an issue in this repository.
