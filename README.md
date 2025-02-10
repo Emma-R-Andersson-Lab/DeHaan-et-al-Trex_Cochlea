@@ -1,7 +1,6 @@
 # De Haan & He et al, Ectoderm barcoding reveals neural and cochlear compartmentalization  
 
-Pre-analysis library characterisation of barcodes can be found at https://github.com/Emma-R-Andersson-Lab/DeHaan-et-al-Trex_Cochlea/tree/main/Barcode_library_sequencing
-General information on the Trex algorithm can be found at https://github.com/frisen-lab/TREX. 
+Pre-analysis library characterisation of barcodes can be found at https://github.com/Emma-R-Andersson-Lab/DeHaan-et-al-Trex_Cochlea/tree/main/Barcode_library_sequencing and https://github.com/Emma-R-Andersson-Lab/He_et_al_Lineage_tracing/tree/main/Barcode_library_sequencing. General information on the Trex algorithm can be found at https://github.com/frisen-lab/TREX. 
 
 
 This repository contains instructions to 
