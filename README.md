@@ -1,4 +1,4 @@
-# De Haan et al, Otic placode and neural crest barcoding reveals cochlear compartmentalization 
+# De Haan & He et al, Ectoderm barcoding reveals neural and cochlear compartmentalization  
 
 Pre-analysis library characterisation of barcodes can be found at https://github.com/Emma-R-Andersson-Lab/DeHaan-et-al-Trex_Cochlea/tree/main/Barcode_library_sequencing
 General information on the Trex algorithm can be found at https://github.com/frisen-lab/TREX. 
