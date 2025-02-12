@@ -7,7 +7,7 @@ This repository contains instructions to
 - extract CellIDs from individual Seurat objects needed for CloneID extraction using the Trex algorithm (notebook #1)
 - Integrate various scRNAseq datasets using SCTransform (including QC and clustering) (notebook #2)
 - how to add the CloneIDs from the Trex output back to the Seurat object (notebook #3)
-- codes for visualisation plots for Fig1 and Fig2 are found at [https://github.com/Emma-R-Andersson-Lab/X](https://github.com/Emma-R-Andersson-Lab/ectoderm_and_mesoderm_lineage_tracing/tree/main/Analysis_in_De_Haan_and_He_et_al) 
+- codes for visualisation plots for Fig1 and Fig2 are found at https://github.com/Emma-R-Andersson-Lab/E9.5-and-E10.5-embryo-lineage-tracing 
 - visualisation including Upset plots, Circos plots (as in Fig4 paper, notebook #4)  and ClonalCoupling/Lineage Trees (as in Fig5 paper, notebook #5)
 - please see https://github.com/Emma-R-Andersson-Lab/deHaan_Apex_vs_Base_2024 for the tonotopy analysis as shown in Fig5
 
