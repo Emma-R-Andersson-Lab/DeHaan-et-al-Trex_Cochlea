@@ -1,7 +1,9 @@
 ## Barcode retrieval and analysis workflow
 
+In order to flag barcodes that are over-represented in a 30N barcode library and could potentially confound clonal analysis, we amplified and DNA-sequenced the barcode region. 
+
 ### Library preparation
-The barcode region with adjacent sequences was amplified to prepare an amplicon sequencing library (according to Ratz et al. Nature Neuroscience, 2022). The library was sequenced on Illumina NextSeq550 instrument.
+The barcode region with adjacent sequences was amplified to prepare an amplicon sequencing library (according to Ratz et al. Nature Neuroscience, 2022). The library was sequenced on Illumina NextSeq550 instrument. For further technical details, see https://doi.org/10.5281/zenodo.14223303 or the methods section in the publication.
 
 ### Fastq file pre-processing
 
